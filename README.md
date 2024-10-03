@@ -14,11 +14,18 @@ cd BERT-EE_Ensemble-Fractures & pip install -r requirements.txt
 ### Datasets
 1. Each clinical note must be an individual .txt file.
 2. For training, each .txt file must have a corresponding annotation (.ann) file according to the [brat rapid annotation tool](https://brat.nlplab.org/).
-3. In `user_params.py`, the parameter **PATIENT_ID** must be a .csv with the data format below:
+3. In `BERT_Ensemble/user_params.py`, the parameter **PATIENT_ID** must be a .csv with the data format below:
 
 | subject_id                    | NoteID         | 
 |-------------------------------|----------------|
 | *string*                      | *string*|
+
+### BERT-EE Models & Ensemble Method
+Two ensemble methods are available: majority voting with discrete events or averaging with the [CLS] embedding. Please specify in `BERT_Ensemble/user_params.py`
+
+```Python
+python main.py
+```
 
 Notes:
 
