@@ -28,8 +28,7 @@ Notes:
 
 ### BERT-EE Models & Ensemble Models
 Three fine-tuned BERT models will independently be run on the notes: *bert-base-cased*, *ClinicalBERT*, and *BioBERT* found in `BERT-EE/bert_models`.
-
-There are two ensemble models:
+Once inferencing is completed, one of two ensemble models will be run:
 
 1. Ensemble majority voting on discrete events
 2. Ensemble averaging of the last hidden state outputs
