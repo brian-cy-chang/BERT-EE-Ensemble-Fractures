@@ -5,10 +5,13 @@ for the ensemble methods of the BERT-EE model predictions.
 import os
 from pathlib import Path
 
-"""BERT-EE data directories"""
+""" 
+BERT-EE data directories 
+Relative paths, do not modify
+"""
 ROOT_DIR = Path(__file__).parent
 BERT_EE_DIR = os.path.join(ROOT_DIR, "BERT-EE")
-BERT_ENSEMBLE_DIR = os.path.join(ROOT_DIR, "BERT_Ensemble")
+# BERT_ENSEMBLE_DIR = os.path.join(ROOT_DIR, "BERT_Ensemble")
 BERT_MODEL_DIR = os.path.join(BERT_EE_DIR, "bert_models")
 RESULTS_DIR = os.path.join(BERT_EE_DIR, "results")
 
@@ -36,13 +39,13 @@ ensemble method
 """
 # ensemble majority voting with discrete events or ensemble averaging with last hidden state embeddings
 ENSEMBLE_METHOD = 'discrete'
-# if POST_PROCESS_METHOD = 'discrete' set span tolerance for grouping events for ensemble majority voting
+# if ENSEMBLE_METHOD = 'discrete' set span tolerance for grouping events for ensemble majority voting
 SPAN_TOLERANCE = 5
-# POST_PROCESS_METHOD = 'hiddenState'
+# ENSEMBLE_METHOD = 'hiddenState'
 
 """
-if post process method = 'hiddenState'
-choose from ['cls', 'average']
+if ENSEMBLE_METHOD = 'hiddenState'
+['cls', 'average']
 """
-HIDDENSTATE_METHOD = 'cls' # only leverage CLS embedding
-# HIDDENSTATE_METHOD = 'average' # leverage entire last hidden state
+HIDDENSTATE_MODE = 'cls' # only leverage CLS embeddings
+# HIDDENSTATE_MODE = 'average' # leverage entire last hidden state output
