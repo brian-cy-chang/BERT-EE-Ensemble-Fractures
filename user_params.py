@@ -12,18 +12,25 @@ Relative paths, do not modify
 ROOT_DIR = Path(__file__).parent
 BERT_EE_DIR = os.path.join(ROOT_DIR, "BERT-EE")
 # BERT_ENSEMBLE_DIR = os.path.join(ROOT_DIR, "BERT_Ensemble")
-BERT_MODEL_DIR = os.path.join(BERT_EE_DIR, "bert_models")
+BERT_MODELS_DIR = os.path.join(BERT_EE_DIR, "bert_models")
+FINE_TUNED_DIR = os.path.join(BERT_EE_DIR, "models")
 RESULTS_DIR = os.path.join(BERT_EE_DIR, "results")
 
 # path of clinical notes to run prediction
+# each clinical note must be a .txt file
 NOTES_DIR = ""
 
-# BERT-EE results directory with NER/RE predictions and hidden state files
-BERT_BASE_DIR = os.path.join(RESULTS_DIR, "bert-base-cased")
-CLINICALBERT_DIR = os.path.join(RESULTS_DIR, "ClinicalBERT")
-BIOBERT_DIR = os.path.join(RESULTS_DIR, "BioBERT")
+# path to fine-tuned BERT models
+BERT_BASE_FINE_TUNED_DIR = os.path.join(FINE_TUNED_DIR, "bert-base-cased/model")
+CLINICALBERT_FINE_TUNED_DIR = os.path.join(FINE_TUNED_DIR, "bert-base-cased/model")
+BIOBERT_FINE_TUNED_DIR = os.path.join(FINE_TUNED_DIR, "bert-base-cased/model")
 
-LOGITS = [BERT_BASE_DIR, CLINICALBERT_DIR, BIOBERT_DIR]
+# BERT-EE results directory with NER/RE predictions and hidden state files
+BERT_BASE_RESULTS_DIR = os.path.join(RESULTS_DIR, "bert-base-cased")
+CLINICALBERT_RESULTS_DIR = os.path.join(RESULTS_DIR, "ClinicalBERT")
+BIOBERT_RESULTS_DIR = os.path.join(RESULTS_DIR, "BioBERT")
+
+LOGITS = [BERT_BASE_RESULTS_DIR, CLINICALBERT_RESULTS_DIR, BIOBERT_RESULTS_DIR]
 
 # file path of patient/subject ID to note ID, must be a csv file
 # example = "<DATA_DIR>/subject_note_id.csv"
