@@ -9,12 +9,12 @@ from bert_hidden_state_ensemble import BERT_HiddenState
 
 def main():
     # run each BERT-based model in parallel
-    print(f"*** Running BERT-EE models on notes from {uparams.NOTES_DIR} ***")
+    print(f"******** Running BERT-EE models on notes from {uparams.NOTES_DIR} ********")
     # List of commands to run
     bert_models = [
-        ['python', os.path.join(uparams.BERT_MODELS_DIR, "main_base.py"), f"--ner_prediction_folder={uparams.NOTES_DIR}", f"--general_results_folder={uparams.BERT_BASE_DIR}", f"--general_fine-tuned-path={uparams.BERT_BASE_FINE_TUNED_DIR}"],
-        ['python', os.path.join(uparams.BERT_MODELS_DIR, "main_clinical.py"), f"--ner_prediction_folder={uparams.NOTES_DIR}", f"--general_results_folder={uparams.CLINICALBERT_DIR}", f"--general_fine-tuned-path={uparams.CLINICALBERT_FINE_TUNED_DIR}"],
-        ['python', os.path.join(uparams.BERT_MODELS_DIR, "main_bio.py"), f"--ner_prediction_folder={uparams.NOTES_DIR}", f"--general_results_folder={uparams.BIOBERT_DIR}", f"--general_fine-tuned-path={uparams.BIOBERT_FINE_TUNED_DIR}"]
+        ['python', os.path.join(uparams.BERT_MODELS_DIR, "main_base.py"), f"--ner_prediction_folder={uparams.NOTES_DIR}", f"--general_results_folder={uparams.BERT_BASE_RESULTS_DIR}", f"--general_fine-tuned-path={uparams.BERT_BASE_FINE_TUNED_DIR}"],
+        ['python', os.path.join(uparams.BERT_MODELS_DIR, "main_clinical.py"), f"--ner_prediction_folder={uparams.NOTES_DIR}", f"--general_results_folder={uparams.CLINICALBERT_RESULTS_DIR}", f"--general_fine-tuned-path={uparams.CLINICALBERT_FINE_TUNED_DIR}"],
+        ['python', os.path.join(uparams.BERT_MODELS_DIR, "main_bio.py"), f"--ner_prediction_folder={uparams.NOTES_DIR}", f"--general_results_folder={uparams.BIOBERT_RESULTS_DIR}", f"--general_fine-tuned-path={uparams.BIOBERT_FINE_TUNED_DIR}"]
     ]
 
     # Start all processes
