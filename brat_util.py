@@ -1,4 +1,10 @@
-import argparse
+"""
+This module contains classes for parsing through
+BRAT annotation files and converting them to a Python
+dictioary or Pandas DataFrame.
+
+Adopted from https://github.com/Lybarger/brat_scoring
+"""
 import os
 from os import listdir
 from os.path import isfile, join, splitext
