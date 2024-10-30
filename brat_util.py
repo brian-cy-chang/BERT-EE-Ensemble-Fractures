@@ -426,30 +426,22 @@ def get_spans(fname, _textbounds):
     return idx_spans
 
 
-def create_dir(save_dir):
-    if os.path.isdir(save_dir):
-        print("Directory to save results exists")
-    else:
-        print("Directory to save results doesn't exists")
-        os.mkdir(save_dir)
+# def ann_to_df(_events):
+#     for k, v in _events.items():
+#         for _key, _value in v.arguments.items():
+#             tmp = {}
 
+#             # tmp['Filename'] = fname.split('/')[2]+'_'+fname.split('/')[4]
+#             tmp["Filename"] = fname.split("/")[4]
+#             tmp["FxEvent"] = v.id
+#             tmp["FxRelation"] = _key
+#             tmp["FxText"] = _textbounds[_value].text
+#             tmp["FxAttribute"] = _textbounds[_value].type_
+#             tmp["start_idx"] = _textbounds[_value].start
+#             tmp["end_idx"] = _textbounds[_value].end
+#             tmp["FxAttributeID"] = _value
+#             if _key != "Fracture":
+#                 tmp["FxAttributeValue"] = _attributes[_value].value
+#                 df.append(tmp)
 
-def ann_to_df(_events):
-    for k, v in _events.items():
-        for _key, _value in v.arguments.items():
-            tmp = {}
-
-            # tmp['Filename'] = fname.split('/')[2]+'_'+fname.split('/')[4]
-            tmp["Filename"] = fname.split("/")[4]
-            tmp["FxEvent"] = v.id
-            tmp["FxRelation"] = _key
-            tmp["FxText"] = _textbounds[_value].text
-            tmp["FxAttribute"] = _textbounds[_value].type_
-            tmp["start_idx"] = _textbounds[_value].start
-            tmp["end_idx"] = _textbounds[_value].end
-            tmp["FxAttributeID"] = _value
-            if _key != "Fracture":
-                tmp["FxAttributeValue"] = _attributes[_value].value
-                df.append(tmp)
-
-    return df
+#     return df
